@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ZipBooks</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/overlay.css">
+  <script type="text/javascript">
+    function valid()
+    {
+      var name = document.forms["Msg"]["Name"];
+    var email = document.forms["Msg"]["EMail"];
+    var phone = document.forms["Msg"]["Telephone"];
+    var msg = document.forms["Msg"]["Message"];
+    var regex = /[a-zA-Z]+$/;
+    var reg = /([0-9]{10})+$/;
+    if (name.value == "")
+    {
+      window.alert("Please enter your name.");
+      name.focus();
+      return false;
+    }
+
+    if(regex.test(name.value) == false)
+    {
+      window.alert("Name must be in letters only");
+      name.focus();
+      return false;
+    }
+    if (email.value == "")
+    {
+      window.alert("Please enter a valid e-mail address.");
+      email.focus();
+      return false;
+    }
+
+    if (email.value.indexOf("@", 0) < 0)
+    {
+      window.alert("Please enter a valid e-mail address."); 
+      email.focus();
+      return false;
+    }
+  
+    if (email.value.indexOf(".", 0) < 0)
+    {
+      window.alert("Please enter a valid e-mail address."); 
+      email.focus();
+      return false;
+    }
+
+    if (phone.value == "")
+    {
+      window.alert("Please enter your telephone number."); 
+      phone.focus();
+      return false;
+    }
+
+    if(reg.test(phone.value) == false)
+    {
+      window.alert("Phone No. must be in number of 10 digits");
+      phone.focus();
+      return false;
+    }
+    if (msg.value == "")
+    {
+      window.alert("Please enter a Message you want to send.");
+      name.focus();
+      return false;
+    }
+    else
+    {
+      window.alert("Message Sent Successfully..!");
+    }
+    return true;
+    }
+  </script>
+</head>
+<body>
+ 
+
+
+	<div class="overlay">
+		<div class="menu">
+			<ul>
+				<li class="h" ><a href="#home" data-text="HOME">HOME</a></li>
+				<li><a href="#service" data-text="SERVICES">SERVICES</a></li>
+				<li><a href="#classes" data-text="DATA">DATA</a></li>
+				<li><a href="#price" data-text="ABOUT US">ABOUT US</a></li>
+				<li><a href="#contact" data-text="CONTACT">CONTACT</a></li>
+				<br><br><br>
+				<li><a><div class="strip"></div></a></li>
+			</ul>
+			
+		</div>
+	</div>
+
+ <!-- Start Header  -->
+ /*<header>
+ 	 <div class="container">
+ 	 	<div class="logo">
+ 	 		 <a href=""> FACE <span>LOG</span></a>
+ 	 	</div>
+ 	 	<a href="javascript:void(0)" class="ham-burger">
+ 	       <span></span>
+         <span></span>
+         <span></span>
+ 	 	</a>
+ 	 	
+ 	 </div>
+ </header>
+ <!-- End Header  -->
+
+  <!-- Start Home -->
+  <section class="home wow flash" id="home">
+	<div class="wrapper">
+		<div class="box1">CODER</div>
+		<div class="box1">DEVELOPER</div>
+		<div class="box1">SQLite</div>
+		<div class="box1">CSS</div>
+		<div class="box1">Face Detection</div>
+		<div class="box1">OpenCV</div>
+		<div class="box1">JS</div>
+		<div class="box1">ML</div>
+		<div class="box1">NodeJs</div>
+		<div class="box1">PYTHON</div>
+	</div>
+  	  <!-- go down -->
+  	      <a href="#about" class="go-down">
+  	      	  <i class="fa fa-angle-down" aria-hidden="true"></i>
+  	      </a>
+  	  <!-- go down -->
+
+  </section>
+  <!-- End Home -->
+
+ <!-- Start Service -->
+ <section class="service" id="service">
+	<div class="container">
+		<div class="content">
+			<div class="text box wow slideInLeft">
+				<h2>About Project</h2>
+				<p>This is a software based project that deals with face recognition of a customer 
+					and displays relevant details such as count of new customers & repeated customers.
+					Along with this it also displays the age, gender and emotions of the customer.
+				</p>
+				<p>This product is suitable for any retail shop that regularly deals with customers.
+					By using OpenCV, python and face recognition modules this software aims at providing reliable customer data.
+					This product uses up to date technology to optimize its performance. 
+					</p>
+				
+			</div>
+			<div class="accordian box wow slideInRight">
+				<div class="accordian-container active">
+					<div class="head">
+						<h4>Face Detection</h4>
+						<span class="fa fa-angle-down"></span>
+					</div>
+					<div class="body">
+						<p>For Face detection we have used the concept of landmarks which will let you detect landmarks of detected face.
+							Once the face will be detected it will be compared with the previous data. If the face is matched then it will be stored in 'known'
+							folder and if not matched then it will be stored in the 'unknown' folder. By comparison it will thus inform whether the customer is repeated or not.
+							 </p>
+					</div>
+				</div>
+				<div class="accordian-container">
+					<div class="head">
+						<h4>Data Analyses</h4>
+						<span class="fa fa-angle-up"></span>
+					</div>
+					<div class="body">
+						<p>We have used the pre-trained models that helps in the analysis of gender, age and emotions of the detected faces.
+						   We have written code that would predict the Age (Different age groups 11-15, 16-20,21-25 etc.),
+						   Sentiments (happy, sad, angry etc.), Gender and landmarks. 
+						   </p>
+					</div>
+				</div>
+				<div class="accordian-container">
+					<div class="head">
+						<h4>Database</h4>
+						<span class="fa fa-angle-up"></span>
+					</div>
+					<div class="body">
+						<p>We have used SQLite for database management and for visualising the data we have used DB Browser. 
+							As soon as the face will be detected, it will be stored in the database along with its details 
+							like unique ID, age, emotions and gender.We have created 3 tables - customer_master, 
+							location_master and visit_register. We have designed the schema in such a way that user can access the data easily.
+							  </p>
+					</div>
+				</div>
+				<div class="accordian-container">
+					<div class="head">
+						<h4>Frontend Work</h4>
+						<span class="fa fa-angle-up"></span>
+					</div>
+					<div class="body">
+						<p>Our Frontend work includes the designing of website which can be used by the admins to see the statistical data of their customers.
+							Along with the details of customer, the website includes the details about entire project and its developers.  </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Service -->
+
+
+
+<!-- Start Classes -->
+<section class="classes" id="classes">
+	<div class="container">
+		 <div class="content">
+             <div class="box timing wow slideInLeft">
+                    <center>
+						<h2>Data</h2>   
+						<br>
+						<script type="text/javascript" src="js/displayData.js"></script>
+						<button class="dataButton" onclick="showCustomerData()">Customer Data</button>
+						<button class="dataButton" onclick="showVisitRegister()">Visit Register</button>
+						<button class="dataButton" onclick="showLocationTable()">Location Table</button>
+						<br><br>
+						
+							<iframe id="iframe1" src=""> </iframe>
+						
+					</center>            
+        	</div>
+		 </div>
+	</div>
+</section>
+<!-- End Classes -->
+
+
+
+ <!-- Start about -->
+ <section class="price-package" id="price">
+	<div class="container">
+		  <h2>About the Developers</h2>
+
+		  <div class="content">
+				<div class="box wow bounceInUp">
+					  <div class="inner">
+							 <div class="price-tag" id="Loss">
+								   RUDRA BARAD
+							 </div>
+							 <div class="img" >
+								  <img src="images/rudra.jpg" alt="RUDRA" />
+							 </div>
+							 <div class="text" >
+								   <h3>18DCS007</h3>
+								   <p>Face Recognition</p>
+								   <p>Web Application</p>
+								   <a href="https://www.linkedin.com/in/rudra-barad/" target="_blank" class="btn">Profile</a>
+							 </div>
+					  </div>
+				</div>
+				<div class="box wow bounceInUp">
+					  <div class="inner">
+							 <div class="price-tag" id="Build">
+					 VARUN SHAH
+							 </div>
+							 <div class="img">
+								  <img src="images/varun.jpg" alt="VARUN" />
+							 </div>
+							 <div class="text" >
+								   <h3>18DCS114</h3>
+								   <p>Age & Gender Analysis</p>
+								   <p>Sentiment Analysis</p>
+								   
+								   <a href="https://www.linkedin.com/in/varun-shah-1467411b2/" class="btn">Profile</a>
+							 </div>
+					  </div>
+				</div>
+				<div class="box wow bounceInUp">
+					  <div class="inner">
+							 <div class="price-tag" id="Transform">
+					 JUHIE MOTIANI
+							 </div>
+							 <div class="img" >
+								  <img src="images/juhie.jpg" alt="JUHIE" />
+							 </div>
+							 <div class="text" >
+								   <h3>18DCS051</h3>
+								   <p>Backend Developer</p>
+								   <p>Node JS & Express</p>
+							 
+								   <a href="https://www.linkedin.com/in/juhie-motiani-3530b8188/" class="btn">Profile</a>
+							 </div>
+					  </div>
+				</div>
+		 </div>
+		  <br><br>
+		  <div class="content">
+			 <div class="box wow bounceInUp">
+				   <div class="inner">
+						  <div class="price-tag" id="Loss">
+								MANAN JOSHI
+						  </div>
+						  <div class="img" >
+							   <img src="images/manan.jpg" alt="MANAN" />
+						  </div>
+						  <div class="text" >
+								<h3>18DCS030</h3>
+								<p>Face Recognition</p>
+								<p>Web Application</p>
+								<a href="https://www.linkedin.com/in/manan-joshi-3b475a199/" target="_blank" class="btn">Profile</a>
+						  </div>
+				   </div>
+			 </div>
+			 <div class="box wow bounceInUp">
+				   <div class="inner">
+						  <div class="price-tag" id="Build">
+							  DHRUTI PATEL  
+						  </div>
+						  <div class="img">
+							   <img src="images/dhruti.jpg" alt="DHRUTI" />
+						  </div>
+						  <div class="text" >
+								<h3>18DCS066</h3>
+								 <p>Age & Gender Analysis</p>
+											   <p>Sentiment Analysis</p>
+								<a href="https://www.linkedin.com/in/dhruti-patel-398157170/" class="btn">Profile</a>
+						  </div>
+				   </div>
+			 </div>
+			 <div class="box wow bounceInUp">
+				   <div class="inner">
+						  <div class="price-tag" id="Transform">
+							  ANJALI PATEL  
+						  </div>
+						  <div class="img" >
+							   <img src="images/anjali.JPG" alt="ANJALI" />
+						  </div>
+						  <div class="text" >
+								<h3>18DCS064</h3>
+								<p>Backend Developer</p>
+								<p>Node JS & Express</p>	
+								<a href="https://www.linkedin.com/in/anjali-patel-6536a916b/" class="btn">Profile</a>
+						  </div>
+				   </div>
+			 </div>
+	   </div>
+	</div>
+</section>
+<!-- End Price -->
+
+ <!-- Start Contact -->
+  <section class="contact" id="contact">
+     <div class="container">
+        <div class="content">
+            <div class="box form wow slideInLeft">
+               <form name="Msg" autocomplete="off" onsubmit="return valid()" method="post">
+                  <div id="msg">Leave A Message</div><br><br>
+                  <input type="text" required="" name="Name" placeholder="Enter Name">
+                  <input type="text" required="" name="EMail" placeholder="Enter Email">
+                  <input type="text" required="" name="Telephone" placeholder="Enter Mobile">
+                  <textarea placeholder="Enter Message" required="" name="Message"></textarea>
+                  <input type="submit" value="Submit" id="msgbtn" name="Submit">
+               </form>
+            </div>
+            <div class="box text wow slideInRight">
+				 <h2 id="msg">ZipBooks Software Solutions Pvt. Ltd</h2>
+				 <br>
+                  <p class="title-p">A truly ascendable & extensible solution with the ability to grow with your busines.<br><br>Come and Visit us personally for further information. You can reach us at the given address. We would like to answer your call and can also help you by E-mail.</p>
+                  <div class="info">
+                      <ul>
+                          <li><span class="fa fa-map-marker"></span>410, Pinnacle Business Park, Corporate Road, Prahladnagar, Ahmedabad 380015. Gujarat. India </li>
+                          <li><span class="fa fa-phone"></span> +91 79 40037105</li>
+                          <li><span class="fa fa-envelope"></span>zipbooks@gmail.com</li>
+                      </ul>
+				  </div>
+				  <br>
+                  <div class="social-buttons pt-5">
+					<a href="tel:" target="_blank"><i class="fa fa-phone"></i></a>
+					<a href="mailto:info@zipbooks.in" target="_blank"><i class="fa fa-envelope"></i></a>
+					<a href="https://www.facebook.com/Zipbookssoftware" target="_blank"><i class="fa fa-facebook"></i></a>
+					<a href="https://www.linkedin.com/company/zipbooks-software-solutions-pvt--ltd/" target="_blank"><i class="fa fa-linkedin"></i></a>
+					<a href="https://twitter.com/cloudzipbooks" target="_blank"><i class="fa fa-twitter"></i></a>
+					<br><br>
+					
+
+				</div>
+            </div>
+        </div>
+     </div>
+  </section>
+ <!-- End Contact -->
+ <!-- jquery -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</script>
+<script>
+		$(document).ready(function(){
+      	$(".ham-burger,.menu ul").click(function(){
+		$('.overlay').slideToggle(700);
+        $(".ham-burger").toggleClass("active");
+      })      
+      $(".accordian-container").click(function(){
+      	$(".accordian-container").children(".body").slideUp();
+      	$(".accordian-container").removeClass("active")
+      	$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up")
+      	$(this).children(".body").slideDown();
+      	$(this).addClass("active")
+      	$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down")
+      })
+
+	               
+         
+      })
+
+</script>
+</body>
+</html>

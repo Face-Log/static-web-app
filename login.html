@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>ZipBooks</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/login.css'>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script>
+        function login() {
+          uid = document.getElementById("username").value
+          pass = document.getElementById("password").value
+          if (uid == "face" && pass == "recognition")
+          {
+            window.close(this);
+            window.open("home.html");
+          }
+          else
+          alert("Invalid User Id or Password ! Please Try Again")
+        }
+        </script>
+	</head> 
+<body>
+    <img src="images/face.jpg" alt="" class="wave">
+    <!---<div class="container">
+        <div class="img">
+            <img src="pic2.svg" alt="">
+        </div>
+    </div>-->
+    <div class="login-container">
+        <form action="index.html">
+            <img class="avatar" src="images/user.jpg" alt="">
+            <h2>Face Log</h2>
+            <div class="input-div one">
+                <div class="i">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div>
+                    <h5>Username</h5>
+                    <input type="text" class="input" id="username" required>
+                </div>
+            </div>
+            <div class="input-div two">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div>
+                    <h5>Password</h5>
+                    <input type="password" class="input" id="password" required>
+                </div>
+            </div>
+            <a href="#">Forget Password?</a>
+            <button type="button" class="btn" value="Login" onclick="login()">Login</button>
+        </form>
+    </div>
+    
+    <script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>
